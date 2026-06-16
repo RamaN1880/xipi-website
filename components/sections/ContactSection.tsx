@@ -2,14 +2,39 @@
 import { useState, FormEvent } from 'react';
 import { useTranslations } from 'next-intl';
 
+const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || '';
+
 export default function ContactSection() {
   const t = useTranslations('contact');
   const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    const mailBody = `Nom: ${form.name}\nEmail: ${form.email}\nTéléphone: ${form.phone}\n\n${form.message}`;
-    window.location.href = `mailto:contact@xipiafrica.com?subject=${encodeURIComponent(form.subject || 'Message depuis xipi.africa')}&body=${encodeURIComponent(mailBody)}`;
+    setStatus('sending');
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          subject: `[XIPI] ${form.subject}`,
+          message: form.message,
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setStatus('success');
+        setForm({ name: '', email: '', phone: '', subject: '', message: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
   };
 
   const inputClass = "w-full border border-gray-200 rounded-xl px-4 py-3 text-[15px] focus:border-[#2867E8] focus:ring-2 focus:ring-blue-100 outline-none transition-all";
@@ -75,48 +100,60 @@ export default function ContactSection() {
 
         {/* Form */}
         <div className="rounded-2xl p-10" style={{ background: '#F5F5F5' }}>
-          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1.5">{t('formName')} *</label>
-                <input type="text" required className={inputClass} value={form.name}
-                  onChange={e => setForm(f => ({ ...f, name: e.target.value }))} />
+          {status === 'success' ? (
+            <div className="flex flex-col items-center gap-4 py-12 text-center">
+              <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">
+                <svg width="32" height="32" fill="#16A34A" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" /></svg>
               </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1.5">{t('formEmail')} *</label>
-                <input type="email" required className={inputClass} value={form.email}
-                  onChange={e => setForm(f => ({ ...f, email: e.target.value }))} />
-              </div>
+              <p className="font-sora font-bold text-[#0F1E3C] text-xl">{t('formSuccess')}</p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1.5">{t('formPhone')}</label>
-                <input type="tel" className={inputClass} value={form.phone}
-                  onChange={e => setForm(f => ({ ...f, phone: e.target.value }))} />
+          ) : (
+            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">{t('formName')} *</label>
+                  <input type="text" required className={inputClass} value={form.name}
+                    onChange={e => setForm(f => ({ ...f, name: e.target.value }))} />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">{t('formEmail')} *</label>
+                  <input type="email" required className={inputClass} value={form.email}
+                    onChange={e => setForm(f => ({ ...f, email: e.target.value }))} />
+                </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">{t('formPhone')}</label>
+                  <input type="tel" className={inputClass} value={form.phone}
+                    onChange={e => setForm(f => ({ ...f, phone: e.target.value }))} />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">{t('formSubject')} *</label>
+                  <select required className={inputClass} value={form.subject}
+                    onChange={e => setForm(f => ({ ...f, subject: e.target.value }))}>
+                    <option value="" disabled>— {t('formSubject')} —</option>
+                    <option>{t('formSubjectOpt1')}</option>
+                    <option>{t('formSubjectOpt2')}</option>
+                    <option>{t('formSubjectOpt3')}</option>
+                    <option>{t('formSubjectOpt4')}</option>
+                  </select>
+                </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1.5">{t('formSubject')} *</label>
-                <select required className={inputClass} value={form.subject}
-                  onChange={e => setForm(f => ({ ...f, subject: e.target.value }))}>
-                  <option value="" disabled>— {t('formSubject')} —</option>
-                  <option>{t('formSubjectOpt1')}</option>
-                  <option>{t('formSubjectOpt2')}</option>
-                  <option>{t('formSubjectOpt3')}</option>
-                  <option>{t('formSubjectOpt4')}</option>
-                </select>
+                <label className="block text-sm font-medium text-gray-700 mb-1.5">{t('formMessage')} *</label>
+                <textarea required rows={5} className={inputClass} style={{ minHeight: '120px', resize: 'vertical' }}
+                  value={form.message} onChange={e => setForm(f => ({ ...f, message: e.target.value }))} />
               </div>
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5">{t('formMessage')} *</label>
-              <textarea required rows={5} className={inputClass} style={{ minHeight: '120px', resize: 'vertical' }}
-                value={form.message} onChange={e => setForm(f => ({ ...f, message: e.target.value }))} />
-            </div>
-            <button type="submit"
-              className="w-full py-3.5 text-white font-bold text-[16px] rounded-2xl transition-opacity hover:opacity-90"
-              style={{ background: '#2867E8' }}>
-              {t('formSubmit')}
-            </button>
-          </form>
+              {status === 'error' && (
+                <p className="text-red-500 text-sm text-center">{t('formError')}</p>
+              )}
+              <button type="submit" disabled={status === 'sending'}
+                className="w-full py-3.5 text-white font-bold text-[16px] rounded-2xl transition-opacity hover:opacity-90 disabled:opacity-60"
+                style={{ background: '#2867E8' }}>
+                {status === 'sending' ? t('formSending') : t('formSubmit')}
+              </button>
+            </form>
+          )}
         </div>
       </div>
     </section>

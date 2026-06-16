@@ -43,7 +43,7 @@ export default function AidaSection() {
                 style={{ background: 'radial-gradient(circle,rgba(255,255,255,0.18) 0%,transparent 70%)' }} />
               <Image
                 src="/images/aida.png"
-                alt="AIDA"
+                alt="Aida"
                 width={340}
                 height={400}
                 className="relative z-10 animate-float"

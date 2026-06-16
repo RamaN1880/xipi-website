@@ -39,7 +39,7 @@ export default function CTAFinal() {
             </div>
           </div>
           <div className="hidden lg:flex justify-end">
-            <Image src="/images/aida.png" alt="AIDA" width={280} height={340} className="animate-float"
+            <Image src="/images/aida.png" alt="Aida" width={280} height={340} className="animate-float"
               style={{ filter: 'drop-shadow(0 40px 80px rgba(0,0,0,0.3))', height: 'auto' }} />
           </div>
         </div>
