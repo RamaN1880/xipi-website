@@ -25,7 +25,7 @@ export default function AISection() {
           <h2 className="font-sora font-extrabold text-[#0F1E3C] mb-5" style={{ fontSize: 'clamp(28px,4vw,44px)', letterSpacing: '-1.2px', lineHeight: 1.1 }}>
             {t('title1')}<br /><span style={{ color: '#2867E8' }}>{t('title2')}</span>
           </h2>
-          <p className="text-[#475569] text-[17px] leading-relaxed">{t('body')}</p>
+          <p className="text-[#475569] text-[17px] leading-relaxed text-justify">{t('body')}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -39,7 +39,7 @@ export default function AISection() {
               <span className="text-xs font-semibold text-[#2867E8] px-2.5 py-1 rounded-full" style={{ background: '#EFF6FF' }}>{t('c1Badge')}</span>
             </div>
             <h3 className="font-sora font-bold text-[#0F1E3C] text-xl mb-3">{t('c1Title')}</h3>
-            <p className="text-[#64748B] text-sm leading-relaxed mb-7">{t('c1Body')}</p>
+            <p className="text-[#64748B] text-sm leading-relaxed text-justify mb-7">{t('c1Body')}</p>
             <div className="flex items-center gap-1 rounded-xl p-4" style={{ background: '#EFF6FF' }}>
               <div className="w-7 h-7 rounded-full bg-[#2867E8] flex items-center justify-center flex-shrink-0 mr-2">
                 <svg width="12" height="12" fill="white" viewBox="0 0 24 24"><path d="M12 15c1.66 0 3-1.34 3-3V6c0-1.66-1.34-3-3-3S9 4.34 9 6v6c0 1.66 1.34 3 3 3z" /></svg>
@@ -67,7 +67,7 @@ export default function AISection() {
               <span className="text-xs font-semibold text-[#EE9218] px-2.5 py-1 rounded-full" style={{ background: '#FFF7ED' }}>{t('c2Badge')}</span>
             </div>
             <h3 className="font-sora font-bold text-[#0F1E3C] text-xl mb-3">{t('c2Title')}</h3>
-            <p className="text-[#64748B] text-sm leading-relaxed mb-7">{t('c2Body')}</p>
+            <p className="text-[#64748B] text-sm leading-relaxed text-justify mb-7">{t('c2Body')}</p>
             <div className="rounded-2xl p-4 grid grid-cols-[1fr_auto] gap-4 items-center" style={{ background: '#FFF7ED', border: '1px solid rgba(238,146,24,0.2)' }}>
               <div className="relative rounded-xl overflow-hidden bg-white" style={{ border: '1px solid #E0EAF5', boxShadow: '0 2px 8px rgba(0,0,0,0.05)' }}>
                 <div className="animate-scan absolute left-0 right-0 h-0.5 z-10 pointer-events-none"
@@ -95,7 +95,7 @@ export default function AISection() {
               <span className="text-xs font-semibold text-green-600 px-2.5 py-1 rounded-full bg-green-100">{t('c3Badge')}</span>
             </div>
             <h3 className="font-sora font-bold text-[#0F1E3C] text-xl mb-3">{t('c3Title')}</h3>
-            <p className="text-[#64748B] text-sm leading-relaxed mb-7">{t('c3Body')}</p>
+            <p className="text-[#64748B] text-sm leading-relaxed text-justify mb-7">{t('c3Body')}</p>
             <div className="flex flex-col gap-2.5">
               <div className="flex items-center gap-3 px-4 py-3 rounded-xl" style={{ background: '#FEF2F2', border: '1px solid #FECACA' }}>
                 <span className="w-2 h-2 rounded-full bg-red-500 flex-shrink-0" />
@@ -122,7 +122,7 @@ export default function AISection() {
               <span className="text-xs font-semibold text-purple-600 px-2.5 py-1 rounded-full" style={{ background: '#F5F0FF' }}>{t('c4Badge')}</span>
             </div>
             <h3 className="font-sora font-bold text-[#0F1E3C] text-xl mb-3">{t('c4Title')}</h3>
-            <p className="text-[#64748B] text-sm leading-relaxed mb-7">{t('c4Body')}</p>
+            <p className="text-[#64748B] text-sm leading-relaxed text-justify mb-7">{t('c4Body')}</p>
             <div className="rounded-xl p-4" style={{ background: '#F8F9FC', border: '1px solid #E2E8F0' }}>
               <div className="text-[11px] text-gray-400 mb-3">{t('c4FormTitle')}</div>
               <div className="grid grid-cols-2 gap-2">

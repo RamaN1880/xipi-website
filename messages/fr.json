@@ -195,6 +195,8 @@
     "c1Email": "contact@xipiafrica.com",
     "c2Title": "Assistance technique",
     "c2Email": "support@xipiafrica.com",
+    "c3Title": "Téléphone",
+    "c3Phone": "+221 77 863 58 58",
     "formName": "Nom complet",
     "formEmail": "Email",
     "formPhone": "Téléphone",
@@ -212,6 +214,16 @@
     "body": "Rejoignez les premières utilisatrices de XIPI à Dakar dès juin 2026. Essai gratuit, sans engagement.",
     "appStoreSoon": "Bientôt disponible",
     "googlePlay": "Google Play"
+  },
+  "aida_section": {
+    "badge": "Rencontrez Aida",
+    "titleLine1": "Rencontrez Aida,",
+    "titleLine2": "votre guide XIPI",
+    "body": "Aida est bien plus qu'une mascotte. C'est votre assistante intelligente qui parle votre langue, guide chaque action, répond à vos questions et rend la gestion financière aussi simple qu'une conversation.",
+    "bullet1": "Parle en français ET en wolof nativement",
+    "bullet2": "Gère les spécificités de votre métier, quel que soit votre secteur",
+    "bullet3": "Rappelle les impayés et échéances tontine",
+    "bullet4": "Proche de vous, disponible à tout moment"
   },
   "footer": {
     "tagline": "L'assistant de gestion des entrepreneurs africains. Vocal, hors ligne, en français et en wolof.",

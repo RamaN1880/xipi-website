@@ -25,7 +25,7 @@ export default function Pillars() {
               </svg>
             </div>
             <h3 className="font-sora font-bold text-[#0F1E3C] text-xl mb-3">{t('p1Title')}</h3>
-            <p className="text-[#475569] text-[15px] leading-relaxed">{t('p1Body')}</p>
+            <p className="text-[#475569] text-[15px] leading-relaxed text-justify">{t('p1Body')}</p>
           </div>
 
           {/* Pillar 2 — Language */}
@@ -39,7 +39,7 @@ export default function Pillars() {
               </svg>
             </div>
             <h3 className="font-sora font-bold text-white text-xl mb-3">{t('p2Title')}</h3>
-            <p className="text-white/88 text-[15px] leading-relaxed">{t('p2Body')}</p>
+            <p className="text-white/88 text-[15px] leading-relaxed text-justify">{t('p2Body')}</p>
           </div>
 
           {/* Pillar 3 — No jargon */}
@@ -50,7 +50,7 @@ export default function Pillars() {
               </svg>
             </div>
             <h3 className="font-sora font-bold text-[#0F1E3C] text-xl mb-3">{t('p3Title')}</h3>
-            <p className="text-[#475569] text-[15px] leading-relaxed">{t('p3Body')}</p>
+            <p className="text-[#475569] text-[15px] leading-relaxed text-justify">{t('p3Body')}</p>
           </div>
         </div>
       </div>

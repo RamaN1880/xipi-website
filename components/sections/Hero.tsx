@@ -32,7 +32,7 @@ export default function Hero() {
 
             <p className="font-sora font-semibold text-white/85 text-xl">{t('slogan')}</p>
 
-            <p className="text-white/80 text-[17px] leading-relaxed max-w-[500px]">{t('body')}</p>
+            <p className="text-white/80 text-[17px] leading-relaxed max-w-[500px] text-justify">{t('body')}</p>
 
             {/* Buttons */}
             <div className="flex flex-wrap gap-4">

@@ -64,19 +64,19 @@ export default function Nav() {
             <div className="hidden sm:flex items-center bg-gray-100 rounded-full p-0.5">
               <button
                 onClick={() => switchLocale('fr')}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-semibold transition-all ${
-                  locale === 'fr' ? 'bg-white text-[#2867E8] shadow-sm' : 'text-gray-500 hover:text-gray-700'
+                className={`flex items-center px-3 py-1.5 rounded-full text-lg transition-all ${
+                  locale === 'fr' ? 'bg-white shadow-sm' : 'opacity-50 hover:opacity-75'
                 }`}
               >
-                <span>🇫🇷</span> FR
+                🇫🇷
               </button>
               <button
                 onClick={() => switchLocale('en')}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-semibold transition-all ${
-                  locale === 'en' ? 'bg-white text-[#2867E8] shadow-sm' : 'text-gray-500 hover:text-gray-700'
+                className={`flex items-center px-3 py-1.5 rounded-full text-lg transition-all ${
+                  locale === 'en' ? 'bg-white shadow-sm' : 'opacity-50 hover:opacity-75'
                 }`}
               >
-                <span>🇬🇧</span> EN
+                🇬🇧
               </button>
             </div>
 
@@ -122,19 +122,19 @@ export default function Nav() {
             <div className="flex items-center bg-gray-100 rounded-full p-0.5">
               <button
                 onClick={() => switchLocale('fr')}
-                className={`flex items-center gap-1 px-3 py-1.5 rounded-full text-sm font-semibold transition-all ${
-                  locale === 'fr' ? 'bg-white text-[#2867E8] shadow-sm' : 'text-gray-500'
+                className={`flex items-center px-3 py-1.5 rounded-full text-lg transition-all ${
+                  locale === 'fr' ? 'bg-white shadow-sm' : 'opacity-50'
                 }`}
               >
-                🇫🇷 FR
+                🇫🇷
               </button>
               <button
                 onClick={() => switchLocale('en')}
-                className={`flex items-center gap-1 px-3 py-1.5 rounded-full text-sm font-semibold transition-all ${
-                  locale === 'en' ? 'bg-white text-[#2867E8] shadow-sm' : 'text-gray-500'
+                className={`flex items-center px-3 py-1.5 rounded-full text-lg transition-all ${
+                  locale === 'en' ? 'bg-white shadow-sm' : 'opacity-50'
                 }`}
               >
-                🇬🇧 EN
+                🇬🇧
               </button>
             </div>
             <a

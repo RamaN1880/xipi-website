@@ -44,7 +44,7 @@ export default function Problem() {
           <h2 className="font-sora font-extrabold text-[#0F1E3C] mb-5" style={{ fontSize: 'clamp(28px,4vw,42px)', letterSpacing: '-1px', lineHeight: 1.15 }}>
             {t('title')}
           </h2>
-          <p className="text-[#475569] text-[17px] leading-relaxed">{t('body')}</p>
+          <p className="text-[#475569] text-[17px] leading-relaxed text-justify">{t('body')}</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -64,7 +64,7 @@ export default function Problem() {
                   <XIcon />
                   <div>
                     <div className="font-semibold text-white text-[15px] mb-1">{item.title}</div>
-                    <div className="text-white/70 text-sm leading-relaxed">{item.body}</div>
+                    <div className="text-white/70 text-sm leading-relaxed text-justify">{item.body}</div>
                   </div>
                 </div>
               ))}
@@ -87,7 +87,7 @@ export default function Problem() {
                   <CheckIcon />
                   <div>
                     <div className="font-semibold text-white text-[15px] mb-1">{item.title}</div>
-                    <div className="text-white/90 text-sm leading-relaxed">{item.body}</div>
+                    <div className="text-white/90 text-sm leading-relaxed text-justify">{item.body}</div>
                   </div>
                 </div>
               ))}

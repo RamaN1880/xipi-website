@@ -2,9 +2,9 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
 const PHOTOS = [
-  '/images/portrait-vendeuse.webp',
-  '/images/portrait-coiffeuse.webp',
   '/images/portrait-couturiere.webp',
+  '/images/portrait-coiffeuse.webp',
+  '/images/portrait-vendeuse.webp',
   '/images/portrait-marchand.webp',
 ];
 
@@ -40,7 +40,7 @@ export default function Portraits() {
               </div>
               <div className="p-6 pb-7">
                 <h3 className="font-sora font-bold text-[#0F1E3C] text-[19px] mb-1.5">{t(card.titleKey)}</h3>
-                <p className="text-[#64748B] text-sm leading-relaxed italic">{t(card.quoteKey)}</p>
+                <p className="text-[#64748B] text-sm leading-relaxed italic text-justify">{t(card.quoteKey)}</p>
               </div>
             </div>
           ))}

@@ -29,7 +29,7 @@ export default function Security() {
           <h2 className="font-sora font-extrabold text-[#0F1E3C] mb-4" style={{ fontSize: 'clamp(28px,4vw,40px)', letterSpacing: '-1px', lineHeight: 1.15 }}>
             {t('title')}
           </h2>
-          <p className="text-[#475569] text-[17px] leading-relaxed">{t('body')}</p>
+          <p className="text-[#475569] text-[17px] leading-relaxed text-justify">{t('body')}</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {cards.map(({ icon, titleKey, bodyKey }) => (
@@ -38,7 +38,7 @@ export default function Security() {
                 {icon}
               </div>
               <h3 className="font-sora font-bold text-[#0F1E3C] text-xl mb-2.5">{t(titleKey)}</h3>
-              <p className="text-[#475569] text-sm leading-[1.75]">{t(bodyKey)}</p>
+              <p className="text-[#475569] text-sm leading-[1.75] text-justify">{t(bodyKey)}</p>
             </div>
           ))}
         </div>

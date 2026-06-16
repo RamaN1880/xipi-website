@@ -25,11 +25,11 @@ export default function ContactSection() {
           <h2 className="font-sora font-extrabold text-[#0F1E3C] mb-4" style={{ fontSize: 'clamp(28px,4vw,40px)', letterSpacing: '-1px', lineHeight: 1.15 }}>
             {t('title')}
           </h2>
-          <p className="text-[#475569] text-[17px] leading-relaxed max-w-[540px] mx-auto">{t('body')}</p>
+          <p className="text-[#475569] text-[17px] leading-relaxed max-w-[540px] mx-auto text-justify">{t('body')}</p>
         </div>
 
         {/* Contact cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
           <a href="mailto:contact@xipiafrica.com"
             className="flex flex-col items-center gap-4 rounded-3xl p-11 text-center no-underline transition-all hover:scale-[1.02]"
             style={{ background: '#F4F8FF', border: '1.5px solid #DDE8FF' }}>
@@ -55,6 +55,20 @@ export default function ContactSection() {
             <div>
               <div className="font-sora font-bold text-[#0F1E3C] text-[19px] mb-1.5">{t('c2Title')}</div>
               <div className="text-[#EE9218] font-semibold text-[15px]">{t('c2Email')}</div>
+            </div>
+          </a>
+
+          <a href="tel:+221778635858"
+            className="flex flex-col items-center gap-4 rounded-3xl p-11 text-center no-underline transition-all hover:scale-[1.02]"
+            style={{ background: '#F0FDF4', border: '1.5px solid #BBF7D0' }}>
+            <div className="w-14 h-14 rounded-2xl flex items-center justify-center" style={{ background: '#DCFCE7' }}>
+              <svg width="26" height="26" fill="#16A34A" viewBox="0 0 24 24">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+              </svg>
+            </div>
+            <div>
+              <div className="font-sora font-bold text-[#0F1E3C] text-[19px] mb-1.5">{t('c3Title')}</div>
+              <div className="text-green-600 font-semibold text-[15px]">{t('c3Phone')}</div>
             </div>
           </a>
         </div>
